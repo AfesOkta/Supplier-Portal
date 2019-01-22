@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
     <head>
-        <title>TODO supply a title</title>
+        <title>Entity and Site</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div layout:fragment="breadcrumb">
-            <h1>Daftar Entity and Site</h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Daftar Entity and Site</li>
-            </ol>	
-        </div>
-        <section layout:fragment="content">
-            <div>TODO write content</div>
-        </section>        
+        <section layout:fragment="content" class="tables">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header d-flex align-items-center">
+                                <h3 class="h4">Daftar Entity and Site</h3>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>EntityID</th>
+                                            <th>Nama Entity</th>                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="entity, rowStat : ${daftarEntity}">
+                                            <th scope="row" th:text="${rowStat.count}">1</th>
+                                            <td th:text="${entity.entityId}">011</td>
+                                            <td th:text="${entity.companyName}">BNI</td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>                
     </body>
 </html>

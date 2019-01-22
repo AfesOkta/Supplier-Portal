@@ -117,13 +117,17 @@
             <div class="main">
                 <!-- MAIN CONTENT -->
                 <div class="main-content">
-                    <div class="container-fluid">                        
-                        <section class="content-header" layout:fragment="breadcrumb"></section>
-                        <!-- Content Header (Page header) -->
-                        <!-- Main content -->
-                        <section class="content" layout:fragment="content">Di sini content utama</section>
-                        <!-- /.content -->                        
+                    <!-- Page Header-->
+                    <header class="page-header">
+                        <div class="container-fluid">
+                            <h2 class="no-margin-bottom" th:text="${pageTitle}">Page Title</h2>
+                        </div>
+                    </header>
+                    <!-- content start -->
+                    <div layout:fragment="content">
+                        <p>Page content goes here</p>
                     </div>
+                    <!-- content end -->
                 </div>
             </div>
             <!-- END MAIN -->

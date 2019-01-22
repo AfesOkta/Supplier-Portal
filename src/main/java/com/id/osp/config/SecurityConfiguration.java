@@ -94,8 +94,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()                
                 .antMatchers("/forgot_password/**").permitAll()
-                .antMatchers("/reset_password/**").permitAll()                
-//                .antMatchers("/kegiatan/**").hasAnyRole("KEGIATAN")
+                .antMatchers("/reset_password/**").permitAll()   
+                
+                .antMatchers("/entity/**").hasAnyRole("MASTER_ENTITY")
 //                .antMatchers("/institusi/**").hasAnyRole("MASTER_INSTITUSI")
 //                .antMatchers("/jenissurat/**").hasAnyRole("MASTER_JENIS_SURAT")
 //                .antMatchers("/jabatan/**").hasAnyRole("MASTER_JABATAN")
