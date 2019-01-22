@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Login | Orlansoft Supplier Portal</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+        <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{vendor/font-awesome/css/font-awesome.min.css}">
+        <link rel="stylesheet" th:href="@{vendor/linearicons/style.css}">
+	<!-- MAIN CSS -->
+        <link rel="stylesheet" th:href="@{css/main.css}">
+	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+        <link rel="stylesheet" th:href="@{css/demo.css}">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+        <link rel="apple-touch-icon" sizes="76x76" th:href="@{img/apple-icon.png}">
+        <link rel="icon" type="image/png" sizes="96x96" th:href="@{img/favicon.ico}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vertical-align-wrap">
+                <div class="vertical-align-middle">
+                    <div class="auth-box">
+                        <div class="left">
+                            <div class="content">
+                                <div class="header">
+                                    <div class="logo text-center"><img th:src="@{img/B2BLogo.png}" alt="OSP Logo"></div>
+                                    <p class="lead">Login to your account</p>
+                                </div>
+                                <form id="login-form" method="post" th:action="@{/login}" class="form-validate" novalidate="novalidate">
+                                    <div class="form-group">
+                                        <input id="login-username" name="username" required="" data-msg="Please enter your username or email" 
+                                               class="form-control" placeholder="User Name" type="text">
+                                        <label for="login-username" class="control-label sr-only">User Name</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="login-password" name="password" required="" data-msg="Please enter your password" 
+                                               class="form-control" placeholder="Password" type="password">
+                                        <label for="login-password" class="control-label sr-only">Password</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                                        </div>
+
+                                        <div class="col-xs-8 text-right">
+                                            <a th:href="@{/forgot_password}" style="line-height:30px">Lupa Password</a>
+                                        </div>
+                                    </div>                                                                                
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Logo & Information Panel-->
+                        <div class="right">
+                            <div class="overlay"></div>
+                                <div class="content text">
+                                    <h1 class="heading">Orlansoft Supplier Portal</h1>
+                                    <p>by Orlansoft Data System</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>            
+        </div>        
+        <!-- Javascript files-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script th:src="@{/js/tether.min.js}" src="../static/js/tether.min.js"></script>
+        <script th:src="@{js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+        <script th:src="@{js/jquery.cookie.js}" src="../static/js/jquery.cookie.js"></script>
+        <script th:src="@{js/jquery.validate.min.js}" src="../static/js/jquery.validate.min.js"></script>
+        <script th:src="@{js/front.js}" src="../static/js/front.js"></script>
+
+    </body>
+</html>
