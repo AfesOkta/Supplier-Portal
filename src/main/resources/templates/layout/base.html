@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <th:block layout:insert="~{fragments/htmlhead}"/>
+    <body>
+        <div id="wrapper">
+            <!-- NAVBAR -->
+            <th:block layout:replace="~{fragments/navigation}"/>
+            <!-- END NAVBAR -->
+            <!-- LEFT SIDEBAR -->
+            <div id="sidebar-nav" class="sidebar">
+                <div class="sidebar-scroll">
+                    <nav>
+                        <ul class="nav">
+                            <li><a th:href="@{/}" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                            <li>
+                                <a href="#master" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i> <span>Master</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <div id="master" class="collapse ">
+                                    <ul class="nav">
+                                        <li><a href="page-profile.html" class="">Supplier</a></li>
+                                        <li><a href="page-login.html" class="">Item</a></li>                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#transaction" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cart"></i> <span>Order to Payment</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <div id="transaction" class="collapse ">
+                                    <ul class="nav">
+                                        <li><a href="page-profile.html" class="">Purchase Order</a></li>
+                                        <li><a href="page-login.html" class="">Good Receipt Note</a></li>
+                                        <li><a href="page-login.html" class="">Purchase Invoice</a></li>
+                                        <li><a href="page-login.html" class="">Scan Purchase Invoice</a></li>
+                                        <li><a href="page-login.html" class="">Remittance</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#admin" data-toggle="collapse" class="collapsed"><i class="lnr lnr-inbox"></i> <span>Admin</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                                <div id="admin" class="collapse ">
+                                    <ul class="nav">
+                                        <li><a th:href="@{/entity/list}" class="">Entity and Site</a></li>
+                                        <li><a href="page-login.html" class="">User Login</a></li>
+                                        <li><a href="page-lockscreen.html" class="">User Group</a></li>
+                                        <li><a href="page-lockscreen.html" class="">Supplier Group</a></li>
+                                        <li><a href="page-lockscreen.html" class="">Category</a></li>
+                                        <li><a href="page-lockscreen.html" class="">Content</a></li>
+                                        <li><a href="page-lockscreen.html" class="">Email</a></li>
+                                    </ul>
+                                </div>
+                            </li>                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- END LEFT SIDEBAR -->
+            <!-- MAIN -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <th:block layout:insert="~{fragments/pagetitle}"/>
+                        <th:block layout:fragment="content"/>
+                        <th:block layout:fragment="body_end"/>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN -->
+            <div class="clearfix"></div>
+            <footer>
+                <div class="container-fluid">
+                    <p class="copyright">&copy; 2019 <a href="https://www.orlansoft.com" target="_blank">Orlansoft Supplier Portal</a>. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>            
+    <th:block layout:replace="~{fragments/body_scripts :: end}"/>
+</body>
+</html>

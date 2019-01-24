@@ -1,0 +1,37 @@
+<head xmlns:th="http://www.thymeleaf.org">
+    <title>Dashboard | Orlansoft Supplier Portal</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" href="../../static/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/vendor/font-awesome/css/font-awesome.min.css}" href="../../static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/vendor/linearicons/style.css}" href="../../static/vendor/linearicons/style.css">
+    <link rel="stylesheet" th:href="@{/vendor/chartist/css/chartist-custom.css}" href="../../static/vendor/chartist/css/chartist-custom.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../static/css/main.css">
+    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+    <link rel="stylesheet" th:href="@{/css/demo.css}" href="../../static/css/demo.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{/img/apple-icon.png}" href="../../static/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/img/favicon.ico}" href="../../static/img/favicon.ico">                        
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var menudd = Cookies.get('menu-dd');
+            if (menudd != null) {
+                $("#" + menudd).addClass("active");
+            } else {
+                Cookies.set('menu-dd', "user");
+            }
+            $(".treeview").each(function () {
+                $(this).click(function () {
+                    $(this.id).addClass("active");
+                    $("#" + Cookies.get('menu-dd')).removeClass("active");
+                    Cookies.set('menu-dd', this.id);
+                });
+            });
+        });
+    </script>
+</head>

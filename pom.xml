@@ -126,6 +126,54 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.samaxes.maven</groupId>
+                    <artifactId>minify-maven-plugin</artifactId>
+                    <version>${minify-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>default-minify</id>
+                            <configuration>
+                                <webappSourceDir>${project.basedir}/src/main</webappSourceDir>
+                                <webappTargetDir>${project.build.directory}/classes</webappTargetDir>
+                                <jsSourceDir>javascript</jsSourceDir>
+                                <jsSourceIncludes>
+                                    <jsSourceInclude>**.js</jsSourceInclude>
+                                </jsSourceIncludes>
+                                <jsTargetDir>static</jsTargetDir>
+                                <jsFinalFile>script.js</jsFinalFile>
+                                <nosuffix>true</nosuffix>
+                            </configuration>
+                            <goals>
+                                <goal>minify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.github.warmuuh</groupId>
+                    <artifactId>libsass-maven-plugin</artifactId>
+                    <version>${libsass-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <inputPath>${basedir}/src/main/sass/</inputPath>
+                        <outputPath>${project.build.directory}/classes/static</outputPath>
+                        <outputStyle>compressed</outputStyle>
+                        <generateSourceMap>false</generateSourceMap>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>    
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
