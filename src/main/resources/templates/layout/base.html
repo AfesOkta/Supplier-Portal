@@ -55,15 +55,19 @@
             </div>
             <!-- END LEFT SIDEBAR -->
             <!-- MAIN -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <th:block layout:insert="~{fragments/pagetitle}"/>
-                        <th:block layout:fragment="content"/>
-                        <th:block layout:fragment="body_end"/>
+            <div class="main">
+                <div class="container-fluid">
+                    <div class="panel panel-headline"> 
+                        <div class="panel-heading">
+                            <section class="content-header" layout:fragment="breadcrumb"></section>
+                        </div>
+                        <div class="panel-body">
+                            <section class="content" layout:fragment="content">Di sini content utama</section>
+                        </div>                  
+                        <th:block layout:fragment="body_end"/>                        
                     </div>
                 </div>
-            </div>
+            </div>            
             <!-- END MAIN -->
             <div class="clearfix"></div>
             <footer>
