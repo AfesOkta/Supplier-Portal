@@ -134,7 +134,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/js/*")
                 .antMatchers("/img/*")
                 .antMatchers("/css/*")
-                .antMatchers("/vendor/*");
+                .antMatchers("/vendor/**");
     }
 
     @Configuration
