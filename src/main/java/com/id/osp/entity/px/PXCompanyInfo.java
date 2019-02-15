@@ -35,6 +35,9 @@ public class PXCompanyInfo implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(name = "id")
+    @Getter @Setter
+    private String id;
     @Column(name = "entityid", columnDefinition = "character varying(10)")
     @Getter @Setter
     private String entityId;
@@ -112,29 +115,5 @@ public class PXCompanyInfo implements Serializable {
     @Getter @Setter
     private String passAuth;
     
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (entityId != null ? entityId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PXCompanyInfo)) {
-            return false;
-        }
-        PXCompanyInfo other = (PXCompanyInfo) object;
-        if ((this.entityId == null && other.entityId != null) || (this.entityId != null && !this.entityId.equals(other.entityId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.id.osp.entity.px.PXCompanyInfo[ id=" + entityId + " ]";
-    }
     
 }

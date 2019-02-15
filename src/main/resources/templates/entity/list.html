@@ -50,15 +50,17 @@
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <th class="noWrapColumn" width="20%">Entity</th>
-                                    <th class="noWrapColumn" width="70%">Nama Entity and Site</th>
+                                    <th class="noWrapColumn" width="20%">EntityID</th>
+                                    <th class="noWrapColumn" width="70%">Nama Entity</th>
                                     <th class="noWrapColumn text-center">&nbsp;</th>
                                 </tr>
                                 <tr th:each="st,iter : ${entity.content}">
-                                    <td class="noWrapColumn" th:text="${st.namaEntity and Site}">Nama Entity and Site</td>
+                                    <td class="noWrapColumn" th:text="${st.entityId}">Entity</td>
+                                    <td class="noWrapColumn" th:text="${st.companyName}">Nama Entity and Site</td>
                                     <td class="noWrapColumn text-center">
-                                        <a href="#" class="btn btn-info" th:href="@{/entity/form(id=${st.entityId})}" title="edit entity"><span class="glyphicon glyphicon-edit"></span></a>
-                                        <a href="#" class="btn btn-info" th:href="@{/entity/delete(id=${st.entityId})}" title="delete entity"><span class="glyphicon glyphicon-remove-circle remove-data"></span></a>
+                                        <a href="#" class="btn btn-info" th:href="@{/entity/form(id=${st.id})}" title="daftar site"><span class="glyphicon glyphicon-filter"></span></a>
+                                        <a href="#" class="btn btn-info" th:href="@{/entity/edit(id=${st.id})}" title="edit entity"><span class="glyphicon glyphicon-edit"></span></a>
+                                        <a href="#" class="btn btn-info" th:href="@{/entity/delete(id=${st.id})}" title="delete entity"><span class="glyphicon glyphicon-remove-circle remove-data"></span></a>
                                     </td>
                                 </tr>
                             </tbody>
